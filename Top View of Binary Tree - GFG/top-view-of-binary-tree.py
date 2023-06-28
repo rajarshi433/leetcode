@@ -15,7 +15,7 @@ class Solution:
         
         # code here
         
-        map = defaultdict(list)
+        map = {}
         
         ans = []
         
@@ -31,7 +31,7 @@ class Solution:
             return
         
         if x not in map.keys():
-            map[x].extend([y, root.data])
+            map[x] = [y, root.data]
         else:
             if y < map[x][0]:
                 map[x] = [y, root.data]
