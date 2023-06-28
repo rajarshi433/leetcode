@@ -6,7 +6,7 @@
 #         self.right = None
 #         self.data = val
 #         self.left = None
-from collections import defaultdict
+
 class Solution:
     
     #Function to return a list of nodes visible from the top view 
