@@ -27,15 +27,12 @@ def serialize(root, A):
         q.append(node.left)
         q.append(node.right)
 
-    # return A
 
 #Function to deserialize a list and construct the tree.   
 def deSerialize(values):
     #code here
     if len(values) == 0:
         return None
-
-    # values = data[::]
     
     q = []
 
@@ -49,16 +46,16 @@ def deSerialize(values):
             left = Node(values[i])
             parent.left = left
             q.append(left)
-        # else:
-        #     parent.left = None
+        else:
+            parent.left = None
 
         
-        if i < len(values) and values[i+1] != None:
+        if values[i+1] != None:
             right = Node(values[i+1])
             parent.right = right
             q.append(right)
-        # else:
-        #     parent.right = None
+        else:
+            parent.right = None
 
     return root
     
