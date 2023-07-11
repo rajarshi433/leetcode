@@ -5,7 +5,7 @@ class Solution:
     def power(self,x,n):
         #Your code here
         
-        mod = 1000000007
+        mod = 10**9 + 7
         
         def helper(x, n):
             if x == 0: return 0
