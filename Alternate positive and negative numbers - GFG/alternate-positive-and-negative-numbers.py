@@ -19,7 +19,6 @@ class Solution:
             nums[i*2] = pos[i]
             nums[i*2 + 1] = neg[i]
         
-        # print(nums[0: 2*l])
             
         if len(neg) < len(pos):
             for i in range(2*l, len(nums)):
