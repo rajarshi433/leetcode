@@ -14,7 +14,7 @@ class Solution:
             if sum_ == k:
                 lon = max(lon, i + 1)
     
-            if (sum_ - k) in map.keys():
+            elif (sum_ - k) in map.keys():
                 lon = max(lon, i - map[sum_ - k])
     
             if sum_ not in map.keys():
