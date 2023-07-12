@@ -18,7 +18,7 @@ class Solution:
                 lon = max(lon, i - map[sum_ - k])
     
             if sum_ not in map.keys():
-                map[sum_] = i 
+                map[sum_] = i  
     
         return lon
     
