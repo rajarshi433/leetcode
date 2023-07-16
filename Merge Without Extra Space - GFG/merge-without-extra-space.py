@@ -3,21 +3,30 @@
 class Solution:
     
     #Function to merge the arrays.
-    def merge(self,arr1,arr2,n,m):
-        #code here
-        i = n -1
-        j = 0
+    def merge(self, nums1, nums2, m, n):
         
-        while i >= 0 and j < m:
-            if arr1[i] > arr2[j]:
-                arr1[i], arr2[j] = arr2[j], arr1[i]
-                i -= 1
-                j += 1
+        # Method 1: 2 Pointer + Sorting
+        left = m - 1
+        right = 0
+
+        while left >= 0 and right < n:
+            if nums2[right] < nums1[left]:
+                # Swap
+                self.swap(nums1, left, nums2, right)
             else:
                 break
+            
+            left -= 1
+            right += 1
         
-        arr1.sort()
-        arr2.sort()
+        nums1.sort()
+        nums2.sort()
+
+
+    def swap(self, arr1, i, arr2, j):
+        arr1[i], arr2[j] = arr2[j], arr1[i]
+        return
+    
     
 
 
