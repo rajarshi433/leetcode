@@ -5,7 +5,7 @@ class Solution:
     def beautySum(self, s):
 
         # Code here
-        beauty, sum = 0, 0
+        beauty = 0
 
         for i in range (len(s)):
 
