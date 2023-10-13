@@ -1,26 +1,25 @@
 #User function Template for python3
 
 class Solution:
-    def lenOfLongSubarr (self, nums, n, k) : 
+    def lenOfLongSubarr (self, arr, n, k) : 
         #Complete the function
         map = {}
-
-        lon = 0
-        sum_ = 0
-    
-        for i in range(len(nums)):
-            sum_ = sum_ + nums[i]
-    
-            if sum_ == k:
-                lon = max(lon, i + 1)
-    
-            elif (sum_ - k) in map.keys():
-                lon = max(lon, i - map[sum_ - k])
-    
-            if sum_ not in map.keys():
-                map[sum_] = i  
-    
-        return lon
+        Sum = 0
+        length = 0
+        
+        for i in range(n):
+            Sum += arr[i]
+            
+            if Sum == k:
+                length = max(length, i + 1)
+                
+            elif (Sum - k) in map:
+                length = max(length, i - map[Sum - k])
+                
+            if Sum not in map:
+                map[Sum] = i
+                
+        return length
     
 
 
