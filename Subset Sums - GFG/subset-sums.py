@@ -10,7 +10,7 @@ class Solution:
     def helper(self, nums, idx, res, temp):
 
         if idx == len(nums):
-            res.append(sum(temp[:]))
+            res.append(sum(temp))
             return 
 
         # take
