@@ -1,26 +1,25 @@
 #User function Template for python3
 class Solution:
-	def subsetSums(self, arr, N):
-		
-		def f(arr, idx, sum_, res):
-		    
-		    if idx < 0:
-		        res.append(sum_)
-		        return
-		    
-		    f(arr, idx - 1, sum_ + arr[idx], res)
-		    f(arr, idx - 1, sum_, res)
-		    
+	def subsetSums(self, nums, N):
+		# code here
+		res = []
+        self.helper(nums, 0, res, [])
+
+        return res
         
-        res = []
-        
-        f(arr, N - 1, 0, res)
-        
-        return sorted(res)
-		    
-		    
-		    
-		    
+    def helper(self, nums, idx, res, temp):
+
+        if idx == len(nums):
+            res.append(sum(temp[:]))
+            return 
+
+        # take
+        temp.append(nums[idx])
+        self.helper(nums, idx + 1, res, temp)
+
+        # not take
+        temp.pop()
+        self.helper(nums, idx + 1, res, temp)
 
 
 #{ 
